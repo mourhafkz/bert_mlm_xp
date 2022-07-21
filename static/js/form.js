@@ -61,7 +61,7 @@ $(document).on('click', '#masked',function(event) {
           // collect data from the form
           var data = collect_text();
           var form_data = {'data':data};
-            console.log(form_data)
+//            console.log(form_data)
            var results = $('#results')
         var predictions = $('.predictions');
             predictions.remove();
@@ -126,7 +126,7 @@ $(document).on('click', '#masked',function(event) {
         $('#masking').hide().empty();
         $('#results').hide().empty();
         list_wrapper.hide();
-        console.log(form_data);
+//        console.log(form_data);
         $.ajax({
             type: 'POST',
             url: '/process',
@@ -150,12 +150,12 @@ $(document).on('click', '#masked',function(event) {
                 $.each( data, function( key, value ) {
 
                       $.each( value, function( k, v ) {
-                      console.log(v);
+//                      console.log(v);
                       let text_id = k;
                       masking.append('<p class="paragraph"></p>');
                       var paragraph = $('.paragraph');
                           $.each( v, function( ke, val ) {
-                          console.log(ke)
+//                          console.log(ke)
                             paragraph.append('<span class="clickable" data-word-order="'+ke+'" data-word-content="'+val.word+'" data-word-mask="false" title="Original word: '+val.word+'">'+ val.word +' </span>');
                           });
                          masking.append('<a href="/masked" id="masked">Ready</a>');
